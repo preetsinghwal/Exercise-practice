@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="reactive-form-example">
+    <div class="field-container">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" placeholder="Enter your name">
+      <div *ngIf="form.get('name').invalid && form.get('name').dirty" class="error-input">
+        Name is required.
+      </div>
+    </div>
+  
+    <div class="field-container">
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" placeholder="Enter valid email">
+      <div *ngIf="form.get('email').invalid && form.get('email').dirty" class="error-input">
+        Valid email is required.
+      </div>
+    </div>
+  
+    <div formArrayName="skills" class="field-container">
+      <div *ngFor="let skill of skills.controls; let i = index" class="skill-item">
+        <div [formGroupName]="i">
+          <label for="skill-{{i}}">Skill:</label>
+          <input id="skill-{{i}}" formControlName="skillName" placeholder="Enter Skill">
+          <button type="button" *ngIf="skills.length > 1" (click)="removeSkill(i)" class="remove-btn">Remove</button>
+        </div>
+        <div *ngIf="skill.get('skillName').invalid && skill.get('skillName').dirty" class="error-input">
+          Skill is required.
+        </div>
+      </div>
+    </div>
+  
+    <button type="button" (click)="addSkill()" class="primary-btn">Add Skill</button>
+  
+    <button type="submit" [disabled]="form.invalid" class="submit-btn">Submit</button>
+  </form>
+  

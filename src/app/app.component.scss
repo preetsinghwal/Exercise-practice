@@ -1,0 +1,19 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .content-wrapper {
+        .head-and-link-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .ul-list {
+            .list-item {
+                margin: 10px auto;
+            }
+        }
+    }
+}

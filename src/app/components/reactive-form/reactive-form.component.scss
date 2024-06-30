@@ -1,0 +1,41 @@
+.reactive-form-example {
+    .error-input {
+        color: red;
+    }
+
+    .field-container {
+        margin: 20px auto;
+    }
+
+    .primary-btn {
+        color: white;
+        background-color: green;
+        border: none;
+        outline: none;
+        padding: 10px 15px 10px 15px;
+        border-radius: 12px;
+    }
+
+    .remove-btn {
+        color: white;
+        background-color: red;
+        border: none;
+        outline: none;
+        padding: 10px 15px 10px 15px;
+        border-radius: 12px;
+    }
+
+    .submit-btn {
+        color: white;
+        background-color: blue;
+        border: none;
+        outline: none;
+        padding: 10px 15px 10px 15px;
+        border-radius: 12px;
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: grey;
+        }
+    }
+}
